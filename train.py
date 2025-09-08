@@ -179,12 +179,12 @@ def main():
     optimizer_student = torch.optim.Adam(itertools.chain(student.parameters()),
                                  lr=2e-4, weight_decay=1e-5)
     scheduler_student = torch.optim.lr_scheduler.StepLR(
-        optimizer_student, step_size=2, gamma=0.1)
+        optimizer_student, step_size=2, gamma=0.9)
     
     optimizer_ae = torch.optim.Adam(itertools.chain(autoencoder.parameters()),
                                  lr=1e-3, weight_decay=1e-5)
     scheduler_ae = torch.optim.lr_scheduler.StepLR(
-        optimizer_ae, step_size=5, gamma=0.1)
+        optimizer_ae, step_size=2, gamma=0.9)
     
     
     warm_up_epochs = 2
